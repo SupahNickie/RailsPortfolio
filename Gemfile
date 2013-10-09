@@ -8,6 +8,7 @@ end
 
 group :test do
   gem "minitest-rails-capybara"
+  gem "minitest-focus"
 end
 
 gem 'rails', '3.2.14'

@@ -41,7 +41,8 @@ module Portfolio
     # config.i18n.default_locale = :de
 
     config.generators do |g|
-      g.test_framework :mini_test, :spec => true, :fixture => false
+      g.test_framework :mini_test, :spec => true
+      g.helper false
     end
 
 
