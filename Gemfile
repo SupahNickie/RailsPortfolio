@@ -4,6 +4,7 @@ gem 'minitest-rails'
 
 group :development, :test do
   gem "minitest-rails"
+  gem "faker"
 end
 
 group :test do
