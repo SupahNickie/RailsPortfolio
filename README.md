@@ -18,3 +18,9 @@ ERRORS: Deployment to Heroku is problematic at best since my installation does n
 ERROR (solved on October 11, 2013): Thanks to Thanh, I was able to install the Postgres gem (my Ruby installation was missing a key component and he found a relevant thread on Stack Overflow). Work will still continue on solving the CSS integration errors.
 
 ![Screencap](/public/images/screenshot2.png "Screencap of basic Bootstrap site")
+
+October 11, 2013
+
+- App is now live at Heroku. URL is http://stormy-fortress-1735.herokuapp.com/
+
+- Continuing to work on CSS issues.
