@@ -23,4 +23,6 @@ October 11, 2013
 
 - App is now live at Heroku. URL is http://stormy-fortress-1735.herokuapp.com/
 
-- Continuing to work on CSS issues.
+- Figuring out CSS issues, though my app still does not seem to want to work fully with the asset pipeline. I will do more investigation into the matter on the weekend.
+
+![Screencap](/public/images/screenshot3.png "Screencap of Bootstrap Blog page with new CSS theme")

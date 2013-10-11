@@ -7,7 +7,7 @@ feature "destroying a post" do
 
     # When a user clicks destroy while on the post index page
     visit posts_path
-    page.find("tr#post_#{posts(:sample_post).id}").click_on "Destroy"
+    page.find("div#post_#{posts(:sample_post).id}").click_on "Destroy Post"
 
     # Then the post is deleted if the user clicks "OK" on the confirmation box
     page.wont_have_content "Techno party"

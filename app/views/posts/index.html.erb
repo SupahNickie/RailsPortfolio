@@ -1,29 +1,39 @@
-<div class="container">
-
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr id="<%= dom_id(post) %>">
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Post', new_post_path %>
-
 </div>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-12">
+          <h1 class="page-header">Developer's Blog<small> Because I'm good at what I do.</small></h1>
+        </div>
+
+      </div>
+
+      <% @posts.each do |post| %>
+
+      <div class="row">
+
+        <div class="col-lg-7 col-md-7">
+          <a href="#"><img class="img-responsive" src="http://placehold.it/700x300"></a>
+        </div>
+
+        <div class="col-lg-5 col-md-5", id="<%= dom_id(post) %>">
+          <h3><%= post.title %></h3>
+          <h4>Subheading (maybe keep this? Have to make a migration to the db)</h4>
+          <p><%= post.content %></p>
+          <br/>
+          <%= link_to 'View Post', post, :class => "btn btn-success" %>
+          <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info" %>
+          <%= link_to 'Destroy Post', post, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
+        </div>
+
+      </div>
+
+      <br/><br/>
+
+      <% end %>
+
+      <%= link_to 'New Post', new_post_path, :class => "btn btn-success" %>
+
+    </div>
