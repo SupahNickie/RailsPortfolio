@@ -1,35 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= @title %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
 
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
+<%= render 'layouts/header' %>
+
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/">Nicholas Case's Portfolio</a>
+ <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+              <%= value %>
+        </div>
+  <% end %>
 
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Projects" %></li>
-        <li><%= link_to "Blog Posts", posts_path %></li>
-        <li><%= link_to "GitHub" %></li>
-        <li><%= link_to "About Me" %></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<%= render 'layouts/nav' %>
 
 <%= yield %>
 

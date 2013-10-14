@@ -1,7 +1,7 @@
 Portfolio::Application.routes.draw do
 
   resources :posts
-
+  resources :projects
 
   root :to => 'home#index'
   # The priority is based upon order of creation:

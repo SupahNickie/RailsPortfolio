@@ -1,0 +1,7 @@
+sample_project:
+  name: "Code Fellows App"
+  technologies_used: "Rails, Ruby, Bootstrap, HTML5, CSS3"
+
+sample_project_2:
+  name: "Sound Sleep Website"
+  technologies_used: "HTML5, CSS3, jQuery"

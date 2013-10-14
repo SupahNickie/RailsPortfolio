@@ -15,12 +15,12 @@
       <div class="row">
 
         <div class="col-lg-7 col-md-7">
-          <a href="#"><img class="img-responsive" src="http://placehold.it/700x300"></a>
+          <%= link_to(image_tag("http://placehold.it/650x300"), "http://www.google.com") %>
         </div>
 
         <div class="col-lg-5 col-md-5", id="<%= dom_id(post) %>">
           <h3><%= post.title %></h3>
-          <h4>Subheading (maybe keep this? Have to make a migration to the db)</h4>
+          <h4>Subheading (maybe keep this? Have to make a migration to the db with a new post.subheading category)</h4>
           <p><%= post.content %></p>
           <br/>
           <%= link_to 'View Post', post, :class => "btn btn-success" %>
