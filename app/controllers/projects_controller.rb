@@ -10,16 +10,42 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
-    if @project.save
-      flash[:notice] = "Project was successfully added."
-      redirect_to @project
-    else
-      # we'll get to this in a bit
+
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to @project, notice: 'Project was successfully added.' }
+        format.json { render json: @project, status: :created, location: @project }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def show
     @project = Project.find(params[:id])
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+
+    respond_to do |format|
+      if @project.update_attributes(params[:project])
+        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+
   end
 
 end
