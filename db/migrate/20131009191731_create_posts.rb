@@ -6,5 +6,13 @@ class CreatePosts < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    create_table :projects do |t|
+      t.string :name
+      t.string :technologies_used
+
+      t.timestamps
+    end
+
   end
 end

@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "editing an existing post" do
-  scenario "the post gets edited" do
+feature "editing an existing project" do
+  scenario "the project gets edited" do
     #Given that a project exists in the database
 
     #When a user vists the project's page and submits an edited version of the project
