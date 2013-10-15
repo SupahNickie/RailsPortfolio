@@ -26,3 +26,7 @@ October 11, 2013
 - Figuring out CSS issues, though my app still does not seem to want to work fully with the asset pipeline. I will do more investigation into the matter on the weekend.
 
 ![Screencap](/public/images/screenshot3.png "Screencap of Bootstrap Blog page with new CSS theme")
+
+October 14, 2013
+
+- Finished writing tests for CRUD actions in the Projects section.
