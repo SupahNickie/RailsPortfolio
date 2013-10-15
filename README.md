@@ -29,4 +29,4 @@ October 11, 2013
 
 October 14, 2013
 
-- Finished writing tests for CRUD actions in the Projects section.
+- Finished writing tests for CRUD actions in the Projects section. Renamed Heroku app to http://case-railsportfolio.herokuapp.com
