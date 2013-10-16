@@ -30,3 +30,7 @@ October 11, 2013
 October 14, 2013
 
 - Finished writing tests for CRUD actions in the Projects section. Renamed Heroku app to http://case-railsportfolio.herokuapp.com
+
+October 15, 2013
+
+- Implemented user authentication (minus admin authorization and permissions) into the app, but my tests are not passing due to a conflict between the fixtures and my database. I'll be seeking help regarding this next class meeting.

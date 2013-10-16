@@ -1,7 +1,9 @@
 sample_post:
   title: "Techno party"
   content: "Boots and cats and boots and cats"
+  author: "examplerawr@exampleuser.com"
 
 sample_post_2:
   title: "Awwyeah"
   content: "This is another post"
+  author: "examplegrawr@exampleuser.com"
