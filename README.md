@@ -34,3 +34,5 @@ October 14, 2013
 October 15, 2013
 
 - Implemented user authentication (minus admin authorization and permissions) into the app, but my tests are not passing due to a conflict between the fixtures and my database. I'll be seeking help regarding this next class meeting.
+
+Update: I removed the references to the fixtures in the tests because they don't work with my database, hardcoding the data with representative data and now my tests pass while still representing the correct actions on my app.

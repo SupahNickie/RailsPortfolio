@@ -24,7 +24,7 @@ feature "creating a post" do
     page.text.must_include 'a long time ago in a galaxy far far away'
     page.text.must_include 'Post was successfully created'
     page.has_css? "#author"
-    page.text.must_include users(:sample_user).email
+    page.text.must_include "exampleuser@example.com"
 
   end
 end
