@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'minitest-rails'
 
+gem 'simplecov', :require => false, :group => :test
+
 group :development, :test do
   gem "minitest-rails"
   gem "faker"
