@@ -4,6 +4,10 @@ gem 'minitest-rails'
 
 gem 'simplecov', :require => false, :group => :test
 
+gem 'pundit'
+
+gem 'pry-rails'
+
 group :development, :test do
   gem "minitest-rails"
   gem "faker"

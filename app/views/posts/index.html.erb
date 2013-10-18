@@ -23,9 +23,21 @@
           <h4>Subheading (maybe keep this? Have to make a migration to the db with a new post.subheading category)</h4>
           <p><%= post.content %></p>
           <br/>
+
           <%= link_to 'View Post', post, :class => "btn btn-success" %>
+
+          <% if policy(post).update? %>
           <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info" %>
+          <% end %>
+
+          <% if policy(post).destroy? %>
           <%= link_to 'Destroy Post', post, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
+          <% end %>
+
+          <% if policy(post).publish? && post.published? == false %>
+          <%= button_to 'Publish', post_path(post, {post: {published: true}}) , method: :put, :class => "btn btn-success", :id => "publishbutton" %>
+          <% end %>
+
         </div>
 
       </div>
@@ -34,6 +46,8 @@
 
       <% end %>
 
-      <%= link_to 'New Post', new_post_path, :class => "btn btn-success" %>
+          <% if policy(Post).create? %>
+          <%= link_to 'New Post', new_post_path, :class => "btn btn-success" %>
+          <% end %>
 
     </div>

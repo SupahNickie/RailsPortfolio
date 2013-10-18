@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @title = "All Blog Posts"
-    @posts = Post.all
+    if current_user
+      @posts = policy_scope(Post)
+    else
+      @posts = Post.where(published: true)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,6 +47,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    authorize @post
 
     respond_to do |format|
       if @post.save
@@ -60,6 +65,8 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    #binding.pry
+    authorize @post
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -76,10 +83,11 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
+    authorize @post
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to posts_url, notice: "The post was successfully deleted." }
       format.json { head :no_content }
     end
   end
