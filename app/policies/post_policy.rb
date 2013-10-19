@@ -7,15 +7,13 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    if user.present?
-      user.author? || user.editor?
-    end
+    user.present? && (user.author? || user.editor?)
   end
 
   # or, could do alias_method :update?, :create?
 
   def update?
-    user.present? && (user.author? || user.editor?)
+      user.present? && (user.author? || user.editor?)
   end
 
   def destroy?
@@ -26,9 +24,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def publish?
-    if user.present?
-      user.editor?
-    end
+    user.present? && user.editor?
   end
 
   class Scope < Struct.new(:user, :scope)

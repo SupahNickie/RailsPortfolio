@@ -65,7 +65,6 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-    #binding.pry
     authorize @post
 
     respond_to do |format|

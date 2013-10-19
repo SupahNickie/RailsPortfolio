@@ -36,3 +36,11 @@ October 15, 2013
 - Implemented user authentication (minus admin authorization and permissions) into the app, but my tests are not passing due to a conflict between the fixtures and my database. I'll be seeking help regarding this next class meeting.
 
 Update: I removed the references to the fixtures in the tests because they don't work with my database, hardcoding the data with representative data and now my tests pass while still representing the correct actions on my app.
+
+October 19, 2013
+
+Implemented user authorization with three distinct roles: editor, author, and visitor. Visitors do not have accounts and are allowed only to view blog posts properly marked as Published. They do not see any other controls. The editor has full admin powers over the website and is in control of post CRUD for all posts, as well as the ability to "Publish" posts. Authors are allowed to CRUD their own posts (and no one else's), but are not allowed to set theirs to the published status. Interestingly, authors are not allowed to see other authors' published articles as well (which follows the prompt).
+
+- First commit of the day: (~10am)
+
+I finished the tests for the "editor" role abilities, including the working Publish button. Later today, I will finish the tests for the "author" and "visitor" roles.
