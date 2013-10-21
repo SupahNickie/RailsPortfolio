@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if current_user
       @posts = policy_scope(Post)
     else
-      @posts = Post.where(published: true)
+      @posts = Post.published
     end
 
     respond_to do |format|
@@ -41,6 +41,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    authorize @post
   end
 
   # POST /posts

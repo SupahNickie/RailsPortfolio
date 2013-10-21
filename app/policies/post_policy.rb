@@ -13,7 +13,9 @@ class PostPolicy < ApplicationPolicy
   # or, could do alias_method :update?, :create?
 
   def update?
-      user.present? && (user.author? || user.editor?)
+      user.present? &&
+      ((user.author? && (post.author == user)) ||
+      (user.editor?))
   end
 
   def destroy?
@@ -32,7 +34,8 @@ class PostPolicy < ApplicationPolicy
       if user.editor?
         scope.all
       elsif user.author?
-        scope.where(author_id: user.id)
+        # | by itself is a "union" operator
+        scope.where(author_id: user.id) | scope.where(published: true)
       else
         scope.where(published: true)
       end

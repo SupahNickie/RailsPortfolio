@@ -47,3 +47,7 @@ I finished the tests for the "editor" role abilities, including the working Publ
 - Last commit of the day: (~1pm)
 
 Wrote the tests to completion for the author and visitor roles. Writing tests is also seeming to work for me on the first try now since the behavior is so intuitive with Rails and the various helpers like Capybara and its DSL.
+
+October 21, 2013
+
+- Redefined the Post Policy file to refine the role of the author to a more realistic standard, allowing them to edit only their posts and not any other authors' as well as to see all published blog posts (just like an unsigned-in user).
