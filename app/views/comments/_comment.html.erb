@@ -11,14 +11,22 @@
     </div>
   <% end %>
 
-  <%= form_for [@post, @comment] do |f| %>
+  <%= form_for [@commentable, @comment] do |f| %>
     <div class="field">
       <%= f.label :author, "Your name" %>
+      <% if current_user.present? %>
+      <%= f.text_field :author, :value => current_user.name %>
+      <% else %>
       <%= f.text_field :author %>
+      <% end %>
     </div>
     <div class="field">
       <%= f.label :author_email, "Your email" %>
+      <% if current_user.present? %>
+      <%= f.text_field :author_email, :value => current_user.email %>
+      <% else %>
       <%= f.text_field :author_email %>
+      <% end %>
     </div>
     <div class="field">
       <%= f.label :author_url, "Your URL" %>
@@ -29,7 +37,7 @@
       <%= f.text_field :content %>
     </div>
     <%= f.hidden_field :referrer, value: request.referrer %>
-    <%= f.hidden_field :post_id,  value: @post.id %>
+    <%= f.hidden_field :commentable_id,  value: @commentable.id %>
     <div class="actions">
       <%= f.submit "Submit comment for approval" %>
     <div>

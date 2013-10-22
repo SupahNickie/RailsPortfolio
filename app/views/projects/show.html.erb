@@ -1,5 +1,21 @@
-<h2><%= @project.name %></h2>
+<h2><%= @project.name %></h2><br><br>
 <p>Technologies used: <%= @project.technologies_used %>
+
+<p>
+  <b>Comments:</b><br><br>
+    <% @project.comments.each do |comment| %>
+      <% #if comment.approved? %>
+        <strong><%= comment.content %></strong><br>
+        Author: <%= comment.author %><br>
+        <% if comment.author_url? %>
+        URL: <%= comment.author_url %><br>
+        <% end %>
+        Email: <%= comment.author_email %>
+      <% #end %>
+    <br><br><% end %><br><br>
+</p>
+
+<%= render 'comments/comment' %>
 
 <%= link_to 'Edit', edit_project_path(@project) %>
 <%= link_to 'Back', projects_path %>

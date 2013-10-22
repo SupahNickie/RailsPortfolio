@@ -1,0 +1,13 @@
+sample1:
+  author: "Notmenope"
+  author_email: "notmenope@example.com"
+  author_url: notmenope.com
+  content: You suck at life
+  commentable: sample_post (Post)
+
+sample2:
+  author: "Notnotmenope"
+  author_email: "notnotmenope@example.com"
+  author_url: notnotmenope.com
+  content: You REALLY suck at life
+  commentable: sample_project (Project)

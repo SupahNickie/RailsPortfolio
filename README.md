@@ -61,3 +61,9 @@ AFTERNOON/NIGHT:
 - Added Twitter login capabilities as well as working comment section, though I haven't yet programmed the "submission to moderators" feature yet; all comments automatically show up regardless of their "published" status. Also note the visible or invisible URL field depending on whether the user submitted one or not with their comment.
 
 ![Screencap](/public/images/screenshot4.png "Screencap of working comment section")
+
+October 22, 2013
+
+- Added polymorphic associations for comments, so now projects and posts can both have their own sets of comments (working off the comments model and controller). Tests written to cover comment posts on projects, and all are passing.
+
+- TODO: Still haven't created an "approved" button for editors/authors to click on submitted comments.
