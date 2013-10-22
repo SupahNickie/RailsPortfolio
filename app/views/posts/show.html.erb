@@ -15,6 +15,21 @@
   <%= @post.content %>
 </p>
 
+<p>
+  <b>Comments:</b><br><br>
+    <% @post.comments.each do |comment| %>
+      <% #if comment.approved? %>
+        <strong><%= comment.content %></strong><br>
+        Author: <%= comment.author %><br>
+        <% if comment.author_url? %>
+        URL: <%= comment.author_url %><br>
+        <% end %>
+        Email: <%= comment.author_email %>
+      <% #end %>
+    <br><br><% end %><br><br>
+</p>
+
+<%= render 'comment' %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

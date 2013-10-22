@@ -50,4 +50,14 @@ Wrote the tests to completion for the author and visitor roles. Writing tests is
 
 October 21, 2013
 
+MORNING:
+
 - Redefined the Post Policy file to refine the role of the author to a more realistic standard, allowing them to edit only their posts and not any other authors' as well as to see all published blog posts (just like an unsigned-in user).
+
+- Also fixed the Heroku app's database issues.
+
+AFTERNOON/NIGHT:
+
+- Added Twitter login capabilities as well as working comment section, though I haven't yet programmed the "submission to moderators" feature yet; all comments automatically show up regardless of their "published" status. Also note the visible or invisible URL field depending on whether the user submitted one or not with their comment.
+
+![Screencap](/public/images/screenshot4.png "Screencap of working comment section")

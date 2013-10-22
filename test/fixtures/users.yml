@@ -2,8 +2,16 @@ editor:
   email: editor@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   role: editor
+  name: Bruce
 
 author:
   email: author@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   role: author
+  name: Chuck
+
+visitor:
+  email: visitor@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: visitor
+  name: Jet

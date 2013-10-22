@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :author, class_name: "User"
-  attr_accessible :content, :title, :published
+  has_many :comments
+  attr_accessible :content, :title, :published, :author_id
   scope :published, where(published: true)
 
   #def self.published

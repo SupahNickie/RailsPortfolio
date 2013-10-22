@@ -6,7 +6,11 @@ gem 'simplecov', :require => false, :group => :test
 
 gem 'pundit'
 
+gem 'omniauth-twitter'
+
 gem 'pry-rails'
+
+gem 'figaro'
 
 group :development, :test do
   gem "minitest-rails"
