@@ -233,7 +233,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
 
-  if Rails.production?
+  if Rails.env.production?
     config.omniauth :twitter, ENV["PRODUCTION_TWITTER_CONSUMER_KEY"], ENV["PRODUCTION_TWITTER_CONSUMER_SECRET"]
   else
     config.omniauth :twitter, ENV["DEV_TWITTER_CONSUMER_KEY"], ENV["DEV_TWITTER_CONSUMER_SECRET"]
