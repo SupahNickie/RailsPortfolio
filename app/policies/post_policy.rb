@@ -13,9 +13,9 @@ class PostPolicy < ApplicationPolicy
   # or, could do alias_method :update?, :create?
 
   def update?
-      user.present? &&
-      ((user.author? && (post.author == user)) ||
-      (user.editor?))
+    user.present? &&
+    ((user.author? && (post.author == user)) ||
+    (user.editor?))
   end
 
   def destroy?

@@ -1,11 +1,14 @@
 Portfolio::Application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :projects
-  resources :comments
 
   root :to => 'home#index'
+
+  match "*unmatched_route", to: "application#raise_not_found!"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
