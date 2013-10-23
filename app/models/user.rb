@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts, foreign_key: "author_id"
+  has_many :projects, foreign_key: "author_id"
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable
@@ -7,7 +8,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
 
-  # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role, :name
 
   def self.from_omniauth(auth)

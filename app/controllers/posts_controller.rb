@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @title = "All Blog Posts"
     if current_user
       @posts = policy_scope(Post)
     else

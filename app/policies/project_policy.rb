@@ -1,9 +1,9 @@
-class PostPolicy < ApplicationPolicy
-  attr_reader :user, :post
+class ProjectPolicy < ApplicationPolicy
+  attr_reader :user, :project
 
-  def initialize(user, post)
+  def initialize(user, project)
     @user = user
-    @post = post
+    @project = project
   end
 
   def create?
@@ -12,14 +12,14 @@ class PostPolicy < ApplicationPolicy
 
   def update?
     user.present? &&
-    ((user.author? && (post.author == user)) ||
+    ((user.author? && (project.author_id == user.id)) ||
     (user.editor?))
   end
 
   def destroy?
     if user.present?
       return true if user.editor?
-      user.id == post.author_id
+      user.id == project.author_id
     end
   end
 

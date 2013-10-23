@@ -35,7 +35,7 @@
           <% end %>
 
           <% if policy(post).publish? && post.published? == false %>
-          <%= button_to 'Publish', post_path(post, {post: {published: true}}) , method: :put, :class => "btn btn-success", :id => "publishbutton" %>
+          <%= button_to 'Publish', post_path(post, post: {published: true}), method: :put, :class => "btn btn-success", :id => "publishbutton" %>
           <% end %>
 
         </div>

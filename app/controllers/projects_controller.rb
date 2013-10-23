@@ -1,15 +1,44 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    @projects = Project.all
+    if current_user
+      @projects = policy_scope(Project)
+    else
+      @projects = Project.published
+    end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @projects }
+    end
+  end
+
+
+  def show
+    @project = Project.find(params[:id])
+    @commentable = @project
+    @comments = @commentable.comments
+    @comment = Comment.new
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @project }
+    end
   end
 
   def new
     @project = Project.new
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @project }
+    end
   end
 
   def create
     @project = Project.new(params[:project])
+    authorize @project
 
     respond_to do |format|
       if @project.save
@@ -22,19 +51,14 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def show
-    @project = Project.find(params[:id])
-    @commentable = @project
-    @comments = @commentable.comments
-    @comment = Comment.new
-  end
-
   def edit
     @project = Project.find(params[:id])
+    authorize @project
   end
 
   def update
     @project = Project.find(params[:id])
+    authorize @project
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
@@ -49,6 +73,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
+    authorize @project
     @project.destroy
 
     respond_to do |format|
@@ -56,5 +81,4 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 end

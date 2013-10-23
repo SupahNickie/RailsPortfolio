@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
 <p>
   <b>Title:</b>
@@ -17,19 +17,37 @@
 
 <p>
   <b>Comments:</b><br><br>
+
     <% @post.comments.each do |comment| %>
-      <% #if comment.approved? %>
+
+      <% if comment.approved? || policy(@post).destroy? %>
+
         <strong><%= comment.content %></strong><br>
         Author: <%= comment.author %><br>
-        <% if comment.author_url? %>
-        URL: <%= comment.author_url %><br>
-        <% end %>
+          <% if comment.author_url? %>
+          URL: <%= comment.author_url %><br>
+          <% end %>
         Email: <%= comment.author_email %>
-      <% #end %>
+      <% end %>
+
+      <% if policy(comment).destroy? %><br>
+      <%= link_to 'Delete Comment', post_comment_path(@commentable, comment), method: :delete %>
+      <% end %>
+
+      <% if policy(comment).approve? && comment.approved? == false %><br>
+      <%= link_to 'Publish Comment', post_comment_path(@commentable, comment, comment: {approved: true}), method: :put %>
+      <% end %>
+
     <br><br><% end %><br><br>
 </p>
 
+<% if user_signed_in? %>
 <%= render 'comments/comment' %>
+<% else %>
+<p><%= link_to 'Sign in', new_user_session_path %> to post comments!</p>
+<% end %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+</div>

@@ -1,21 +1,41 @@
+<div class="container">
+
 <h2><%= @project.name %></h2><br><br>
 <p>Technologies used: <%= @project.technologies_used %>
 
 <p>
   <b>Comments:</b><br><br>
+
     <% @project.comments.each do |comment| %>
-      <% #if comment.approved? %>
+
+      <% if comment.approved? || policy(comment).destroy? %>
+
         <strong><%= comment.content %></strong><br>
         Author: <%= comment.author %><br>
-        <% if comment.author_url? %>
-        URL: <%= comment.author_url %><br>
-        <% end %>
+          <% if comment.author_url? %>
+          URL: <%= comment.author_url %><br>
+          <% end %>
         Email: <%= comment.author_email %>
-      <% #end %>
+      <% end %>
+
+      <% if policy(comment).destroy? %><br>
+      <%= link_to 'Delete Comment', project_comment_path(@commentable, comment), method: :delete %>
+      <% end %>
+
+      <% if policy(comment).approve? && comment.approved? == false %><br>
+      <%= link_to 'Publish Comment', project_comment_path(@commentable, comment, comment: {approved: true}), method: :put %>
+      <% end %>
+
     <br><br><% end %><br><br>
 </p>
 
+<% if user_signed_in? %>
 <%= render 'comments/comment' %>
+<% else %>
+<p><%= link_to 'Sign in', new_user_session_path %> to post comments!</p>
+<% end %>
 
-<%= link_to 'Edit', edit_project_path(@project) %>
+<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+
+</div>

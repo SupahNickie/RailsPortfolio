@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "destroying a project post" do
   scenario "the project item goes byebye" do
+    sign_in_editor
     # Given that there are already posts in the post index (thanks to the yaml fixture)
 
     # When a user clicks destroy while on the projects index page

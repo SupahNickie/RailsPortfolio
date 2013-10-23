@@ -3,6 +3,7 @@ require "test_helper"
 feature "creating a project" do
   scenario "a project item is created" do
     # Given that there is a path to submit a portfolio item and a completed form
+    sign_in_editor
     visit projects_path
     click_on "New Project"
     fill_in "Name", with: "#{projects(:sample_project).name}"
@@ -19,6 +20,7 @@ feature "creating a project" do
 
  scenario "new project has invalid data" do
     # Given invalid project data is entered in a form
+    sign_in_editor
     visit new_project_path
     fill_in "Name", with: "Q"
 

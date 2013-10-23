@@ -9,3 +9,9 @@ sample_post_2:
   content: This is another post
   author: author
   published: false
+
+sample_post_3:
+  title: REMIX
+  content: Unce unce unce unce
+  author: author
+  published: true

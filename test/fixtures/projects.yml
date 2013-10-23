@@ -1,7 +1,14 @@
 sample_project:
   name: "Code Fellows App"
   technologies_used: "Rails, Ruby, Bootstrap, HTML5, CSS3"
+  published: true
 
 sample_project_2:
   name: "Sound Sleep Website"
   technologies_used: "HTML5, CSS3, jQuery"
+  published: true
+
+sample_project_3:
+  name: "Another web app"
+  technologies_used: "Javascript"
+  published: false

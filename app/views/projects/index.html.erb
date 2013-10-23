@@ -20,12 +20,21 @@
 
         <div class="col-lg-5 col-md-5", id="<%= dom_id(project) %>">
           <h3><%= project.name %></h3>
-          <h4>Subheading (maybe keep this? Have to make a migration to the db with a new post.subheading category)</h4>
           <p><%= project.technologies_used %></p>
           <br/>
           <%= link_to 'View Project', project, :class => "btn btn-success" %>
+
+          <% if policy(project).update? %>
           <%= link_to 'Edit Project', edit_project_path(project), :class => "btn btn-info" %>
+          <% end %>
+
+          <% if policy(project).destroy? %>
           <%= link_to 'Destroy Project', project, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
+          <% end %>
+
+          <% if policy(project).publish? && project.published? == false %>
+          <%= button_to 'Publish', project_path(project, project: {published: true}), method: :put, :class => "btn btn-success", :id => "publishbutton" %>
+          <% end %>
         </div>
 
       </div>
@@ -34,6 +43,8 @@
 
       <% end %>
 
-      <%= link_to 'New Project', new_project_path, :class => "btn btn-success" %>
+          <% if policy(Project).create? %>
+          <%= link_to 'New Project', new_project_path, :class => "btn btn-success" %>
+          <% end %>
 
     </div>

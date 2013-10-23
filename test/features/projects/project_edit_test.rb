@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "editing an existing project" do
   scenario "the project gets edited" do
+    sign_in_editor
     #Given that a project exists in the database
 
     #When a user vists the project's page and submits an edited version of the project
@@ -17,6 +18,7 @@ feature "editing an existing project" do
   end
 
    scenario "incorrectly editing an existing project" do
+    sign_in_editor
     # Given an existing project
 
     # When I submit invalid changes

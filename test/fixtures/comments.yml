@@ -3,11 +3,29 @@ sample1:
   author_email: "notmenope@example.com"
   author_url: notmenope.com
   content: You suck at life
-  commentable: sample_post (Post)
+  commentable: sample_post_3 (Post)
+  approved: true
 
 sample2:
+  author: "Doesn't Matter"
+  author_email: "doesntmatter@example.com"
+  author_url: doesntmatterexample.com
+  content: You're stinky
+  commentable: sample_post_3 (Post)
+  approved: false
+
+sample3:
   author: "Notnotmenope"
   author_email: "notnotmenope@example.com"
   author_url: notnotmenope.com
   content: You REALLY suck at life
   commentable: sample_project (Project)
+  approved: true
+
+sample4:
+  author: "Not Doesn't Matter"
+  author_email: "notdoesntmatter@example.com"
+  author_url: notdoesntmatterexample.com
+  content: You're super stinky
+  commentable: sample_project (Project)
+  approved: false
