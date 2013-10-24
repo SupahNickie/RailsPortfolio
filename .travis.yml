@@ -1,10 +1,8 @@
 language: ruby
 rvm:
   - "2.0.0"
-#  - "1.9.3"
 env:
-  - DB=sqlite
-  - DEVISE_SECRET=484f9c3e3997e426c68d7492a7fd6a2a830c21f602ded63f496edc3508a7d1d4240d9a2da898f9e48366f63910166260c00116a360cadd4f3ea2f93e7b53d839
+  - DB=sqlite DEVISE_SECRET=484f9c3e3997e426c68d7492a7fd6a2a830c21f602ded63f496edc3508a7d1d4240d9a2da898f9e48366f63910166260c00116a360cadd4f3ea2f93e7b53d839
 
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
