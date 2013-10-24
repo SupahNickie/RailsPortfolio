@@ -67,3 +67,25 @@ October 22, 2013
 - Added polymorphic associations for comments, so now projects and posts can both have their own sets of comments (working off the comments model and controller). Tests written to cover comment posts on projects, and all are passing.
 
 - TODO: Still haven't created an "approved" button for editors/authors to click on submitted comments.
+
+October 23, 2013
+
+- Polished up the association between users and comments, so now the permissions are equivalent between Post and Project (including their comments). The permissions are as follows:
+
+AUTHORS:
+
+-CRUD Posts and Projects, but not publish any. All other authors' published works are visible as well.
+-Submit comments for moderation (on other peoples' works)
+-Delete/Approve comments on their own works
+
+EDITORS:
+
+-CRUD and Publish Posts and Projects, all works are visible.
+-Leave comments, all others' comments are visible.
+-Delete/Approve comments on ALL works
+
+VISITORS:
+
+-Read Posts and Projects if they are published
+-Read comments if they are published
+-Submit comments for moderation
