@@ -10,7 +10,6 @@ feature "visiting the post index page" do
 
     # Then the editor should see all the posts regardless of published status
     page.text.must_include "Techno party" && "Awwyeah"
-    page.text.must_include "Boots and cats and boots and cats" && "This is another post"
 
   end
 end

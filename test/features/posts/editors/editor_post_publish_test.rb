@@ -14,7 +14,6 @@ feature "publishing a post" do
     visit posts_path
     page.wont_have_content "Publish"
     page.text.must_include "Awwyeah"
-    page.text.must_include "This is another post"
 
   end
 end

@@ -20,9 +20,8 @@
 
         <div class="col-lg-5 col-md-5", id="<%= dom_id(post) %>">
           <h3><%= post.title %></h3>
-          <h4>Subheading (maybe keep this? Have to make a migration to the db with a new post.subheading category)</h4>
-          <p><%= post.content %></p>
-          <br/>
+          <h4>By: <%= post.author[:email] %></h4>
+          <br/><br/>
 
           <%= link_to 'View Post', post, :class => "btn btn-success" %>
 

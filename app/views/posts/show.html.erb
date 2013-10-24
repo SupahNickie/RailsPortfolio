@@ -12,8 +12,18 @@
 
 <p>
   <b>Content:</b>
-    <%= @post.content %>
+    <%= simple_format @post.content %>
 </p>
+
+<% if @post.id == 3 %>
+  <br><br>
+  <%= image_tag "https://s3-us-west-2.amazonaws.com/case-railsportfolio.herokuapp.com/blog4.png", :size => "940x528" %>
+  <br><br>
+  <%= image_tag "https://s3-us-west-2.amazonaws.com/case-railsportfolio.herokuapp.com/blog5.png", :size => "940x528" %>
+  <br><br>
+  <%= image_tag "https://s3-us-west-2.amazonaws.com/case-railsportfolio.herokuapp.com/blog6.png", :size => "940x528" %>
+  <br><br>
+<% end %>
 
 <p>
   <b>Comments:</b><br><br>
