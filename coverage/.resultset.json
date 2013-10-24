@@ -555,11 +555,11 @@
         1,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -575,7 +575,7 @@
         null,
         null,
         1,
-        3,
+        5,
         null,
         null,
         1,
@@ -628,8 +628,8 @@
         null,
         null,
         1,
-        35,
-        35,
+        36,
+        36,
         0,
         0,
         0,
@@ -715,7 +715,7 @@
         1,
         null,
         1,
-        26,
+        28,
         null,
         null,
         null
@@ -723,10 +723,10 @@
       "/home/nicholas/Documents/Portfolio/app/controllers/omniauth_callbacks_controller.rb": [
         1,
         1,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
         null,
         0,
         0,
@@ -1605,6 +1605,6 @@
         null
       ]
     },
-    "timestamp": 1382587827
+    "timestamp": 1382635199
   }
 }

@@ -4,13 +4,19 @@ Code Fellows
 
 [![Build Status](https://travis-ci.org/SupahNickie/RailsPortfolio.png?branch=master)](https://travis-ci.org/SupahNickie/RailsPortfolio)
 
+===============
 October 8, 2013
+===============
+
 
 - Began work on the Portfolio assignment, which included setting up a "home" controller, editing titles, basic routing, and creating tests to show my routing worked while running the Rails server on localhost:3000.
 
 ![Screencap](/public/images/screenshot.png "Screencap of Test Passing")
 
+================
 October 10, 2013
+================
+
 
 - Currently, there are six tests passing, a "can access home" smoke test, a "check for bootstrap" test to make sure the site is using the Bootstrap framework, and four tests covering the CRUD capabilities of the "Post" controller (handling blog posts). All tests are green and automated on Travis to check for any new Git commits. Site also currently has a Bootstrap template that is more proof-of-ability than anything else, as the site may look quite a bit different when it is finally deployed publicly. Enclosed is a screenshot of the site as it appears on a development environment as of the end of October 10th.
 
@@ -20,7 +26,10 @@ October 10, 2013
 
 ![Screencap](/public/images/screenshot2.png "Screencap of basic Bootstrap site")
 
+================
 October 11, 2013
+================
+
 
 - App is now live at Heroku. URL is http://stormy-fortress-1735.herokuapp.com/
 
@@ -28,15 +37,24 @@ October 11, 2013
 
 ![Screencap](/public/images/screenshot3.png "Screencap of Bootstrap Blog page with new CSS theme")
 
+================
 October 14, 2013
+================
+
 
 - Finished writing tests for CRUD actions in the Projects section. Renamed Heroku app to http://case-railsportfolio.herokuapp.com
 
+================
 October 15, 2013
+================
+
 
 - Implemented user authentication (minus admin authorization and permissions) into the app, but my tests are not passing due to a conflict between the fixtures and my database. I'll be seeking help regarding this next class meeting.
 
+================
 October 19, 2013
+================
+
 
 - Implemented user authorization with three distinct roles: editor, author, and visitor. Visitors do not have accounts and are allowed only to view blog posts properly marked as Published. They do not see any other controls. The editor has full admin powers over the website and is in control of post CRUD for all posts, as well as the ability to "Publish" posts. Authors are allowed to CRUD their own posts (and no one else's), but are not allowed to set theirs to the published status. Interestingly, authors are not allowed to see other authors' published articles as well (which follows the prompt).
 
@@ -48,7 +66,10 @@ I finished the tests for the "editor" role abilities, including the working Publ
 
 Wrote the tests to completion for the author and visitor roles. Writing tests is also seeming to work for me on the first try now since the behavior is so intuitive with Rails and the various helpers like Capybara and its DSL.
 
+================
 October 21, 2013
+================
+
 
 MORNING:
 
@@ -62,13 +83,19 @@ AFTERNOON/NIGHT:
 
 ![Screencap](/public/images/screenshot4.png "Screencap of working comment section")
 
+================
 October 22, 2013
+================
+
 
 - Added polymorphic associations for comments, so now projects and posts can both have their own sets of comments (working off the comments model and controller). Tests written to cover comment posts on projects, and all are passing.
 
 - TODO: Still haven't created an "approved" button for editors/authors to click on submitted comments.
 
+================
 October 23, 2013
+================
+
 
 - Polished up the association between users and comments, so now the permissions are equivalent between Post and Project (including their comments). The permissions are as follows:
 

@@ -15,4 +15,19 @@ feature "signing in as an existing user" do
     page.text.must_include 'Signed in successfully.'
 
   end
+
+  scenario "signing in with twitter works" do
+    # Given that an user has a Twitter account
+
+    # When the user signs in with Twitter
+    visit root_path
+    click_on 'Sign In'
+    sign_in_twitter_user
+    click_on 'Sign in with Twitter'
+
+    # Then the user should be signed in
+    page.text.must_include "#{}, you are signed in!"
+
+  end
+
 end
