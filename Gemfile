@@ -8,15 +8,15 @@ gem 'pundit'
 
 gem 'omniauth-twitter'
 
-gem 'pry-rails'
-
 gem 'figaro'
 
 group :development, :test do
   gem "minitest-rails"
+  gem "pry-rails"
   gem "faker"
   gem "sqlite3"
   gem "launchy"
+  gem "turn"
 end
 
 group :test do

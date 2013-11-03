@@ -156,6 +156,7 @@
         null,
         null,
         null,
+        null,
         1,
         null,
         null,
@@ -440,7 +441,8 @@
         null,
         null,
         null,
-        1
+        1,
+        null
       ],
       "/home/nicholas/Documents/Portfolio/config/initializers/session_store.rb": [
         null,
@@ -1605,6 +1607,6 @@
         null
       ]
     },
-    "timestamp": 1382635199
+    "timestamp": 1383498343
   }
 }
